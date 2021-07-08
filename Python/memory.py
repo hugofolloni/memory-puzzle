@@ -24,28 +24,49 @@ def startGame():
         else: 
             splited = inputlist.split()
 
+            def avoidBlank():
 
-            local = int(splited[0]) - 1
-            numberx = int(splited[1])
+                local = int(splited[0]) - 1
+                numberx = int(splited[1])
 
 
-            if numbers[local] == numberx:
+
+                if numbers[local] == numberx:
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    asteriscos[local] = numberx 
+                    if '*' in asteriscos:
+                        print(asteriscos)
+                        game()
+                    else: 
+                        print("YOU WON")
+                        print('------------------------')
+                        playAgain = input("Quer jogar novamente? Responda com 'y' ou 'n' ")
+                        if playAgain == 'y':
+                            startGame()
+                        else:
+                            exit()
+                else:
+                    os.system('cls' if os.name == 'nt' else 'clear')
+                    print("WRONG! YOU LOST!")
+                    tryAgain = input("Tentar novamente? Responda com 'y' ou 'n' ")
+                    if tryAgain == 'y':
+                        os.system('cls' if os.name == 'nt' else 'clear')
+                        startGame()
+                    if tryAgain == 'n': 
+                        exit()    
+            
+            if len(splited) < 2:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                asteriscos[local] = numberx 
-                print(asteriscos)
-                if '*' in asteriscos:
-                    game()
-                else: 
-                    print("YOU WON")
-            else:
                 print("WRONG! YOU LOST!")
-                os.system('cls' if os.name == 'nt' else 'clear')
                 tryAgain = input("Tentar novamente? Responda com 'y' ou 'n' ")
                 if tryAgain == 'y':
                     os.system('cls' if os.name == 'nt' else 'clear')
                     startGame()
                 if tryAgain == 'n': 
                     exit()    
+        
+            else: 
+                avoidBlank()
 
     game()
 
