@@ -1,6 +1,5 @@
 import random
 import time
-import sys
 import os
 
 def startGame():
@@ -9,11 +8,11 @@ def startGame():
 
     random.shuffle(numbers)
 
-    print('Memorize isto: ')
+    print('Memorize esta sequência de números: ')
     print(numbers)
     time.sleep(10)
-    sys.stdout.write("\033[F")
-    asteriscos = ['*', '*', '*', '*', '*', '*', '*', '*', '*']
+    os.system('cls' if os.name == 'nt' else 'clear')
+    asteriscos = ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     print(asteriscos)
 
     def game():
@@ -25,22 +24,22 @@ def startGame():
         else: 
             splited = inputlist.split()
 
-            print(splited)
 
             local = int(splited[0]) - 1
             numberx = int(splited[1])
 
-            print(local)
 
             if numbers[local] == numberx:
+                os.system('cls' if os.name == 'nt' else 'clear')
                 asteriscos[local] = numberx 
                 print(asteriscos)
                 game()
             else:
-                print("Wrong!")
+                print("WRONG! YOU'VE LOST!")
                 os.system('cls' if os.name == 'nt' else 'clear')
                 tryAgain = input("Tentar novamente? Responda com 'y' ou 'n' ")
                 if tryAgain == 'y':
+                    os.system('cls' if os.name == 'nt' else 'clear')
                     startGame()
                 if tryAgain == 'n': 
                     exit()    
