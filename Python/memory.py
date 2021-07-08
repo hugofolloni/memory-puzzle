@@ -33,9 +33,12 @@ def startGame():
                 os.system('cls' if os.name == 'nt' else 'clear')
                 asteriscos[local] = numberx 
                 print(asteriscos)
-                game()
+                if '*' in asteriscos:
+                    game()
+                else: 
+                    print("YOU WON")
             else:
-                print("WRONG! YOU'VE LOST!")
+                print("WRONG! YOU LOST!")
                 os.system('cls' if os.name == 'nt' else 'clear')
                 tryAgain = input("Tentar novamente? Responda com 'y' ou 'n' ")
                 if tryAgain == 'y':
