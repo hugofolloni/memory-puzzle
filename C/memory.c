@@ -16,7 +16,7 @@ int main() {
       printf(" %d ", j);
    };
 
-   sleep(5);
+   sleep(10);
 
    system("cls");
 
