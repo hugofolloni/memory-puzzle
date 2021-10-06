@@ -32,5 +32,5 @@ int main() {
    for(l = 0; l < 10; l++){
       printf(" %d ", shuffled[l]);
    }
-   printf("\nO primeiro e o seu chute, ja o segundo o real. Compare e veja quantos pontos fez!");
+   printf("\nO primeiro é o seu chute, ja o segundo o real. Compare e veja quantos pontos fez!");
 }
